@@ -5,8 +5,11 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	Hello world!
+	
+	${msg}  
 </h1>
+
 
 </body>
 </html>
