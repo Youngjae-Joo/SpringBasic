@@ -11,11 +11,12 @@
 	<h3>목록화면</h3>
 	
 	<c:forEach var="article" items="${list }" varStatus="num">
-		${num.index }
+		${article.num }
 		${article.name }
 		${article.kor }
 		${article.eng }
-		<a href="delete?num=${num.index }">삭제</a>
+		<a href="delete?num=${article.num }">삭제</a>
+		<a href="modify?num=${article.num }&name=${article.name}&kor=${article.kor}&eng=${article.eng}">수정</a>
 		<hr/>
 	</c:forEach>
 </body>

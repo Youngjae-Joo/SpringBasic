@@ -9,4 +9,5 @@ public interface ScoreService {
 	public void regist(ScoreVO vo);
 	public ArrayList<ScoreVO> getList();
 	public void delete(int num);
+	public void modify(int num, String name, String kor, String eng);
 }

@@ -1,0 +1,28 @@
+# varchar2 -> varchar
+# number(10) ->int
+# date->date or timestamp
+# 시퀀스 -> auto_increment
+# 함수 -> 구글링
+# 조인 -> 완벽동일
+# 서브쿼리 -> 테이블 엘리어스가 필수
+# mysql은 버전별로 대소문자를 구분할 수도 있고, 구분을 안할 수도 있음.
+
+create table score (
+	num int primary key auto_increment,
+    name varchar(30) not null,
+    kor int default 0,
+    eng int default 0
+);
+
+drop table score;
+
+select * from score;
+insert into score(name, kor, eng) values ('에이스', 50, 80);
+
+select A.*
+from (select *
+	  from score) A;
+      
+select @@autocommit; -- 확인
+# set autocommit = 1; 켜기
+# set autocommit = 0; 끄기

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +55,23 @@ public class ServiceController {
 	public String delete(@RequestParam("num")int num) {
 		service.delete(num);
 		return "redirect:/service/scoreList";//삭제후에 목록으로
+	}
+	
+	//수정
+	@RequestMapping("/modify")
+	public String modify(@ModelAttribute("num")int num,
+						@ModelAttribute("name")String name,
+						@ModelAttribute("kor")String kor,
+						@ModelAttribute("eng")String eng) {
+		return	"service/scoreModify";
+	}
+	
+	
+	@RequestMapping("/modifyThis")
+	public String modifyThis(ScoreVO vo) {
+		
+		service.modify(vo.getNum(),vo.getName(),vo.getKor(),vo.getEng());
+		return "redirect:/service/scoreList";
 	}
 	
 	

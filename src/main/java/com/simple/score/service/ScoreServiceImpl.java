@@ -34,5 +34,10 @@ public class ScoreServiceImpl implements ScoreService {
 	public void delete(int num) {
 		scoreDAO.delete(num);
 	}
+
+	@Override
+	public void modify(int num, String name, String kor, String eng) {
+		scoreDAO.modify(num,name,kor,eng);		
+	}
 	
 }
