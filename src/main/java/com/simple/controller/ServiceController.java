@@ -69,7 +69,6 @@ public class ServiceController {
 	
 	@RequestMapping("/modifyThis")
 	public String modifyThis(ScoreVO vo) {
-		
 		service.modify(vo.getNum(),vo.getName(),vo.getKor(),vo.getEng());
 		return "redirect:/service/scoreList";
 	}
